@@ -1,0 +1,290 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div *ngIf="step==1" class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" data-background-color="orange">
+                    <h5 class="large">Hajj Info</h5>
+                </div>
+                <div class="card-body ">
+                    <div class="form-container ">
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <input matInput type="text" required [(ngModel)]="member.fName" placeholder="Name">
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <input matInput type="text" required [(ngModel)]="member.number" placeholder="Hajj Per. Number">
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <input matInput type="text" required [(ngModel)]="member.age" placeholder="Age">
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <mat-chip-list [(ngModel)]='member.gender'>
+                                <mat-chip [value]='0' (click)='member.gender = 0' color="primary">Male</mat-chip>
+                                <mat-chip [value]='1' (click)='member.gender = 1' color="accent">Female</mat-chip>
+                            </mat-chip-list>
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <input matInput type="text" required [(ngModel)]="member.nationalty" placeholder="Nationalty">
+                        </mat-form-field>
+                        <div class="btn-group " data-toggle="buttons">
+                                <label class="btn btn-neutral btn-icon btn-round btn-lg">
+                                    <input type="checkbox">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <span class="fa fa-check"></span>
+                                </label>
+                                <label class="btn btn-neutral btn-icon btn-round btn-lg">
+                                    <input type="checkbox">
+                                    <i class="fas fa-deaf"></i>
+                                    <span class="fa fa-check"></span>
+                                </label>
+                                <label class="btn btn-neutral btn-icon btn-round btn-lg">
+                                    <input type="checkbox">
+                                    <i class="fas fa-blind"></i>
+                                    <span class="fa fa-check"></span>
+                                </label>
+                            </div>
+                        <!-- <div class="button-container">
+                            <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+                                <i class="fas fa-heartbeat"></i>
+                            </button>
+                            <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+                                <i class="fas fa-deaf"></i>
+                            </button>
+                            <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+                                <i class="fas fa-blind"></i>
+                            </button>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="card-footer ">
+                    <div class="text-center">
+                        <button (click)="setStep(2)" class="btn btn-primary">
+                            {{NextStep}}
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="step==2" class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" data-background-color="orange">
+                    <h5 class="large">Injury location</h5>
+                </div>
+                <div class="card-body">
+                    <div class="col-6">
+                        <div class="div-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="100.8 2495.15 156.493 383.9">
+                                <defs>
+                                    <style>
+                                        .unselected {
+                                            fill: #e5e5e5;
+                                        }
+
+                                        .selected {
+                                            fill: #F96332;
+                                        }
+                                    </style>
+                                </defs>
+                                <g id="Body_Part" data-name="Body Part" transform="translate(100.8 2507.15)">
+                                    <circle id="Left_Feet" (click)="onClick('Left_Feet')" [ngClass]="setColor('Left_Feet')" cx="12.304" cy="12.304" r="12.304"
+                                        transform="translate(47.677 347.293)" />
+                                    <path id="Left_Leg" (click)="onClick('Left_Leg')" [ngClass]="setColor('Left_Leg')" d="M40.11,209.6H34.919A11.856,11.856,0,0,1,23,197.684V159.811A12.021,12.021,0,0,1,34.919,147.7H40.11a11.9,11.9,0,0,1,11.919,12.111v37.872A11.736,11.736,0,0,1,40.11,209.6Z"
+                                        transform="translate(21.217 134.421)" />
+                                    <path id="Left_Thigh" (click)="onClick('Left_Thigh')" [ngClass]="setColor('Left_Thigh')" d="M40.11,175.511H34.919A11.856,11.856,0,0,1,23,163.592V125.719A11.856,11.856,0,0,1,34.919,113.8H40.11a11.856,11.856,0,0,1,11.919,11.919v37.872A11.736,11.736,0,0,1,40.11,175.511Z"
+                                        transform="translate(21.217 103.15)" />
+                                    <circle id="Left_Hand" (click)="onClick('Left_Hand')" [ngClass]="setColor('Left_Hand')" cx="10.189" cy="10.189" r="10.189"
+                                        transform="translate(1.922 218.488)" />
+                                    <path id="Left_Forearm" (click)="onClick('Left_Forearm')" [ngClass]="setColor('Left_Forearm')" d="M12.111,146.577h0A12.021,12.021,0,0,1,0,134.658V88.519A11.856,11.856,0,0,1,11.919,76.6h0A11.856,11.856,0,0,1,23.838,88.519v46.139A11.694,11.694,0,0,1,12.111,146.577Z"
+                                        transform="translate(0 68.834)" />
+                                    <path id="Left_Arm" (click)="onClick('Left_Arm')" [ngClass]="setColor('Left_Arm')" d="M12.111,103.358h0A12.021,12.021,0,0,1,0,91.439V57.219A11.856,11.856,0,0,1,11.919,45.3h0A11.856,11.856,0,0,1,23.838,57.219V91.247A11.741,11.741,0,0,1,12.111,103.358Z"
+                                        transform="translate(0 39.961)" />
+                                    <circle id="Right_Feet" (click)="onClick('Right_Feet')" [ngClass]="setColor('Right_Feet')" cx="12.304" cy="12.304" r="12.304"
+                                        transform="translate(91.894 347.293)" />
+                                    <path id="Right_Leg" (click)="onClick('Right_Leg')" [ngClass]="setColor('Right_Leg')" d="M63.11,209.6H57.919A11.856,11.856,0,0,1,46,197.684V159.811A12.021,12.021,0,0,1,57.919,147.7H63.11a11.9,11.9,0,0,1,11.919,12.111v37.872A11.736,11.736,0,0,1,63.11,209.6Z"
+                                        transform="translate(42.433 134.421)" />
+                                    <path id="Right_Thigh" (click)="onClick('Right_Thigh')" [ngClass]="setColor('Right_Thigh')" d="M63.11,175.511H57.919A11.856,11.856,0,0,1,46,163.592V125.719A11.856,11.856,0,0,1,57.919,113.8H63.11a11.856,11.856,0,0,1,11.919,11.919v37.872A11.736,11.736,0,0,1,63.11,175.511Z"
+                                        transform="translate(42.433 103.15)" />
+                                    <circle id="Right_Hand" (click)="onClick('Right_Hand')" [ngClass]="setColor('Right_Hand')" cx="10.189" cy="10.189" r="10.189"
+                                        transform="translate(134.572 218.488)" />
+                                    <path id="Right_Forearm" (click)="onClick('Right_Forearm')" [ngClass]="setColor('Right_Forearm')" d="M81.111,103.358h0A12.021,12.021,0,0,1,69,91.439V57.219A11.856,11.856,0,0,1,80.919,45.3h0A11.856,11.856,0,0,1,92.838,57.219V91.247A11.741,11.741,0,0,1,81.111,103.358Z"
+                                        transform="translate(63.65 39.961)" />
+                                    <path id="Right_Arm" (click)="onClick('Right_Arm')" [ngClass]="setColor('Right_Arm')" class="unselected" d="M81.111,146.577h0A12.021,12.021,0,0,1,69,134.658V88.519A11.856,11.856,0,0,1,80.919,76.6h0A11.856,11.856,0,0,1,92.838,88.519v46.139A11.694,11.694,0,0,1,81.111,146.577Z"
+                                        transform="translate(63.65 68.834)" />
+                                    <path id="Body" (click)="onClick('Body')" [ngClass]="setColor('Body')" d="M82.518,173.766H41.569A23.137,23.137,0,0,1,18.5,150.7V67.07A23.137,23.137,0,0,1,41.569,44H82.518a23.137,23.137,0,0,1,23.069,23.07V150.5A23.179,23.179,0,0,1,82.518,173.766Z"
+                                        transform="translate(17.065 38.762)" />
+                                    <rect id="Neck" (click)="onClick('Neck')" [ngClass]="setColor('Neck')" width="27.979" height="16.109" rx="8" transform="translate(65.283 63.457)"
+                                    />
+                                    <circle id="Head" (click)="onClick('Head')" [ngClass]="setColor('Head')" cx="35.565" cy="35.565" r="35.565" transform="translate(43.063 -12)"
+                                    />
+                                </g>
+                            </svg>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer ">
+                    <div class="text-center">
+                        <button (click)="setStep(3)" class="btn btn-primary">
+                            {{NextStep}}
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="step==3" class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" data-background-color="orange">
+                    <h5 class="large">Patient assessment</h5>
+                </div>
+                <div class="card-body ">
+                    <div class="form-container ">
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <mat-select placeholder="Eyes Response" (selectionChange)="onChange($event)" [(ngModel)]="member.eye">
+                                <mat-option *ngFor="let item of eyes; let i = index" [value]="i">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <mat-select placeholder="Verbal Response" (selectionChange)="onChange()" [(ngModel)]="member.verbal">
+                                <mat-option *ngFor="let item of verbals; let i = index" [value]="i">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <mat-select placeholder="Motor Response" (selectionChange)="onChange()" [(ngModel)]="member.motor">
+                                <mat-option *ngFor="let item of motors; let i = index" [value]="i">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <label>GCS Score: {{member.gcs}}</label>
+                    </div>
+                </div>
+
+                <div class="card-footer ">
+                    <div class="text-center">
+                        <button (click)="setStep(4)" class="btn btn-primary">
+                            {{NextStep}}
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="step==4" class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" data-background-color="orange">
+                    <h5 class="large">Turma assessment</h5>
+                </div>
+                <div class="card-body ">
+                    <div class="form-container ">
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <mat-select placeholder="Nerue Response" [(ngModel)]="member.nerue">
+                                <mat-option *ngFor="let item of nerue; let i = index" [value]="i">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <mat-select placeholder="Skin Color" [(ngModel)]="member.skinColor">
+                                <mat-option *ngFor="let item of skinColor; let i = index" [value]="i">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <mat-select placeholder="Temperature" [(ngModel)]="member.temperature">
+                                <mat-option *ngFor="let item of temperatures; let i = index" [value]="i">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <mat-select placeholder="Pupils" [(ngModel)]="member.pupils">
+                                <mat-option *ngFor="let item of pupils; let i = index" [value]="i">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <mat-select placeholder="Lungs" [(ngModel)]="member.lungs">
+                                <mat-option *ngFor="let item of lungs; let i = index" [value]="i">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <!-- <label>GCS Score: {{member.gcs}}</label> -->
+                    </div>
+                </div>
+
+                <div class="card-footer ">
+                    <div class="text-center">
+                        <button (click)="setStep(5)" class="btn btn-primary">
+                            {{NextStep}}
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="step==5" class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" data-background-color="orange">
+                    <h5 class="large">Blood assessment</h5>
+                </div>
+                <div class="card-body ">
+                    <div class="form-container ">
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <input matInput type="text" required [(ngModel)]="member.blood" placeholder="Preusre">
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                            <input matInput type="text" required [(ngModel)]="member.pulse" placeholder="Pulse">
+                        </mat-form-field>
+                        <mat-form-field class="col-xs-8 col-sm-7 col-md-6 col-lg-5">
+                                <mat-select placeholder="Loss" [(ngModel)]="member.loss">
+                                        <mat-option *ngFor="let item of loss; let i = index" [value]="i">{{item}}</mat-option>
+                                    </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="card-footer ">
+                    <div class="text-center">
+                        <button (click)="setStep(10)" class="btn btn-primary">
+                            {{NextStep}}
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="step==10" class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" data-background-color="orange">
+                    <h5 class="large">Report Sent</h5>
+                </div>
+                <!--  <div class="card-body ">
+                            <div class="form-container ">
+                                Sent
+                            </div>
+                        </div>
+       
+                        <div class="card-footer ">
+                            <div class="text-center">
+                                <button (click)="setStep(4)" class="btn btn-primary">
+                                        {{NextStep}}
+                                </button>
+                            </div>
+                        </div> -->
+
+            </div>
+        </div>
+
+    </div>
+</div>

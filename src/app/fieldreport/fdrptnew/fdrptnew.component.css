@@ -1,0 +1,33 @@
+.active{
+    opacity: 0.7;
+}
+.label-btn{
+    color: white !important;    
+    width: 30%;
+    margin-right: 3%;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.dropdown-cmd{
+width: 95% !important; 
+}
+.full-width{
+    width: 100%;
+}
+.large{
+    color: gray
+}
+.div-center {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-content{
+    margin-top: -75px !important;    
+}
+.btn span.fa-check {    			
+	opacity: 0;				
+}
+.btn.active span.fa-check {				
+	opacity: 1;				
+}

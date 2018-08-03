@@ -1,0 +1,10 @@
+.btn-shadow{
+    box-shadow: 0 9px 30px -6px !important;    
+    border-radius: 50% !important;    
+    border-width: 1px !important;    
+}
+
+.main-content {
+    margin-top: -60px !important;    
+  }
+  
